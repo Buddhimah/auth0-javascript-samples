@@ -4,7 +4,7 @@ let auth0 = null;
 /**
  * Starts the authentication flow
  */
-const login = async (targetUrl) => {
+const login = async (targetUrl)  => {
   try {
     console.log("Logging in", targetUrl);
 
@@ -15,7 +15,6 @@ const login = async (targetUrl) => {
     if (targetUrl) {
       options.appState = { targetUrl };
     }
-
     await auth0.loginWithRedirect(options);
   } catch (err) {
     console.log("Log in failed", err);

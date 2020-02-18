@@ -61,7 +61,19 @@ const updateUI = async () => {
     const isAuthenticated = await auth0.isAuthenticated();
 
     if (isAuthenticated) {
+      document.getElementById("gated-content").classList.remove("hidden");
       const user = await auth0.getUser();
+      document.getElementById(
+          "ipt-access-token"
+      ).innerHTML = await auth0.getTokenSilently();
+
+      document.getElementById("ipt-user-profile").textContent = JSON.stringify(
+          await auth0.getUser()
+      );
+
+      document.getElementById("ipt-id-token").textContent = JSON.stringify(
+          await auth0.getIdTokenClaims()
+      );
 
       document.getElementById("profile-data").innerText = JSON.stringify(
         user,
