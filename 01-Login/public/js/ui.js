@@ -3,6 +3,10 @@ const router = {
   "/": () => showContent("content-home"),
   "/profile": () =>
     requireAuth(() => showContent("content-profile"), "/profile"),
+  "/IDtoken": () =>
+      requireAuth(() => showContent("content-token"), "/IDtoken"),
+  "/AccessToken": () =>
+      requireAuth(() => showContent("content-access-token"), "/AccessToken"),
   "/login": () => login()
 };
 
@@ -74,6 +78,12 @@ const updateUI = async () => {
       document.getElementById("ipt-id-token").textContent = JSON.stringify(
           await auth0.getIdTokenClaims()
       );
+      document.getElementById("token-data").textContent = JSON.stringify(
+          await auth0.getIdTokenClaims()
+      );
+      document.getElementById(
+          "access-token-data"
+      ).innerHTML = await auth0.getTokenSilently();
 
       document.getElementById("profile-data").innerText = JSON.stringify(
         user,

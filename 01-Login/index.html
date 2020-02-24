@@ -37,7 +37,6 @@
       <div class="nav-container">
         <nav class="navbar navbar-expand-md navbar-light bg-light">
           <div class="container">
-            <div class="navbar-brand logo"></div>
             <button
               class="navbar-toggler"
               type="button"
@@ -92,6 +91,18 @@
                       class="dropdown-item dropdown-profile route-link"
                     >
                       <i class="fas fa-user mr-3"></i> Profile
+                    </a>
+                    <a
+                            href="/IDtoken"
+                            class="dropdown-item dropdown-profile route-link"
+                    >
+                      <i class="fas fa-user mr-3"></i> ID token
+                    </a>
+                    <a
+                            href="/AccessToken"
+                            class="dropdown-item dropdown-profile route-link"
+                    >
+                      <i class="fas fa-user mr-3"></i> Access Token
                     </a>
                     <a
                       href="#"
@@ -211,6 +222,49 @@
             <div class="row">
               <pre class="rounded">
                 <code id="profile-data" class="json"></code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="page" id="content-token">
+          <div class="container">
+            <div class="row align-items-center profile-header">
+              <div class="col-md-2">
+                <img
+                        alt="User's profile picture"
+                        class="rounded-circle img-fluid profile-image mb-3 mb-md-0"
+                />
+              </div>
+              <div class="col-md">
+                <h2 class="user-name"></h2>
+                <p class="lead text-muted user-email"></p>
+              </div>
+            </div>
+
+            <div class="row">
+              <pre class="rounded">
+                <code id="token-data" class="json"></code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="page" id="content-access-token">
+          <div class="container">
+            <div class="row align-items-center profile-header">
+              <div class="col-md-2">
+                <img
+                        alt="User's profile picture"
+                        class="rounded-circle img-fluid profile-image mb-3 mb-md-0"
+                />
+              </div>
+              <div class="col-md">
+                <h2 class="user-name"></h2>
+                <p class="lead text-muted user-email"></p>
+              </div>
+            </div>
+
+            <div class="row">
+              <pre class="rounded">
+                <code id="access-token-data" class="json"></code></pre>
             </div>
           </div>
         </div>
